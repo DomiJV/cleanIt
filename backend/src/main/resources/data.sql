@@ -1,0 +1,63 @@
+INSERT INTO customer (id, first_name, last_name, email, phone, address)
+VALUES (1, 'John', 'Doe', 'john.doe@example.com', '555-123-4567', '123 Main St, Anytown, ST 12345');
+
+INSERT INTO cleaning_order (id, customer_id, status, creation_date)
+VALUES (101, 1, 'NEW', TIMESTAMP '2023-01-15 09:30:00'),
+       (102, 1, 'IN_PROGRESS', TIMESTAMP '2023-01-16 10:15:00'),
+       (103, 1, 'COMPLETED', TIMESTAMP '2023-01-14 08:45:00'),
+       (104, 1, 'CANCELED', TIMESTAMP '2023-01-13 14:20:00'),
+       (105, 1, 'COMPLETED', TIMESTAMP '2023-01-10 11:00:00'),
+       (106, 1, 'NEW', TIMESTAMP '2023-01-17 13:30:00'),
+       (107, 1, 'IN_PROGRESS', TIMESTAMP '2023-01-16 09:00:00'),
+       (108, 1, 'NEW', TIMESTAMP '2023-01-17 10:45:00'),
+       (109, 1, 'COMPLETED', TIMESTAMP '2023-01-12 15:15:00'),
+       (110, 1, 'CANCELED', TIMESTAMP '2023-01-11 16:30:00'),
+       (111, 1, 'IN_PROGRESS', TIMESTAMP '2023-01-15 12:00:00'),
+       (112, 1, 'COMPLETED', TIMESTAMP '2023-01-09 14:45:00'),
+       (113, 1, 'NEW', TIMESTAMP '2023-01-18 08:15:00'),
+       (114, 1, 'IN_PROGRESS', TIMESTAMP '2023-01-16 11:30:00'),
+       (115, 1, 'COMPLETED', TIMESTAMP '2023-01-13 10:00:00');
+
+INSERT INTO order_item (id, order_id, material, type, price)
+VALUES (1001, 101, 'Cotton', 'SHIRT', 29.50),
+       (1002, 101, 'Silk', 'SHIRT', 29.50),
+       (1003, 102, 'Wool', 'OTHERS', 49.50),
+       (1004, 102, 'Polyester', 'OTHERS', 49.50),
+       (1005, 103, 'Linen', 'SHIRT', 29.50),
+       (1006, 103, 'Cotton', 'PANTS', 39.50),
+       (1007, 104, 'Denim', 'PANTS', 39.50),
+       (1008, 105, 'Leather', 'OTHERS', 49.50),
+       (1009, 105, 'Suede', 'OTHERS', 49.50),
+       (1010, 106, 'Cashmere', 'OTHERS', 49.50),
+       (1011, 107, 'Cotton', 'OTHERS', 49.50),
+       (1012, 107, 'Silk', 'OTHERS', 49.50),
+       (1013, 108, 'Wool', 'OTHERS', 49.50),
+       (1014, 109, 'Polyester', 'OTHERS', 49.50),
+       (1015, 109, 'Linen', 'PANTS', 39.50),
+       (1016, 110, 'Denim', 'PANTS', 39.50),
+       (1017, 111, 'Leather', 'OTHERS', 49.50),
+       (1018, 111, 'Suede', 'OTHERS', 49.50),
+       (1019, 112, 'Cashmere', 'OTHERS', 49.50),
+       (1020, 112, 'Cotton', 'OTHERS', 49.50),
+       (1021, 103, 'Silk', 'OTHERS', 49.50),
+       (1022, 113, 'Wool', 'OTHERS', 49.50),
+       (1023, 114, 'Polyester', 'OTHERS', 49.50),
+       (1024, 114, 'Linen', 'SHIRT', 29.50),
+       (1025, 115, 'Denim', 'PANTS', 39.50);
+
+INSERT INTO invoice (id, order_id, status, amount, creation_date, paid_date)
+VALUES (1, 101, 'PAID', 159.95, '2025-01-10 14:30:00', '2025-01-15 09:45:00'),
+       (2, 102, 'PAID', 129.97, '2025-01-15 10:15:00', '2025-01-20 16:30:00'),
+       (3, 103, 'OPEN', 119.98, '2025-01-20 09:00:00', NULL),
+       (4, 104, 'PAID', 59.99, '2025-01-25 11:30:00', '2025-01-27 14:15:00'),
+       (5, 105, 'PARTIALLY_PAID', 279.98, '2025-01-30 13:45:00', NULL),
+       (6, 106, 'PAID', 179.99, '2025-02-05 15:20:00', '2025-02-10 11:00:00'),
+       (7, 107, 'PARTIALLY_PAID', 114.98, '2025-02-10 12:00:00', NULL),
+       (8, 108, 'OPEN', 89.99, '2025-02-15 14:30:00', NULL),
+       (9, 109, 'PAID', 149.97, '2025-02-20 10:45:00', '2025-02-23 16:20:00'),
+       (10, 110, 'OPEN', 49.99, '2025-02-25 09:30:00', NULL),
+       (11, 101, 'PAID', 29.99, '2025-01-12 16:15:00', '2025-01-18 10:30:00'),
+       (12, 102, 'OPEN', 19.99, '2025-01-17 13:40:00', NULL),
+       (13, 105, 'OPEN', 99.99, '2025-02-01 11:25:00', NULL),
+       (14, 107, 'PARTIALLY_PAID', 149.98, '2025-02-12 14:50:00', NULL),
+       (15, 109, 'PAID', 79.98, '2025-02-22 13:15:00', '2025-02-25 09:45:00');
